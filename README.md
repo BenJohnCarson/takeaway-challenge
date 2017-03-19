@@ -1,33 +1,37 @@
-Takeaway Challenge
-==================
+# Takeaway Challenge
+#### Technologies: Ruby, RSpec, Twilio
 
-User Stories
--------------
+## Index
+* [Task](#Task)
+* [Installation](#Install)
+* [Usage](#Usage)
+* [User Stories](#Stories)
+* [Possible Extensions](#Extensions)
 
+## <a name="Task">Task</a>
+To create a takeaway program where a customer can order a meal from a list of dishes and recieve and confirmation text.
+
+## <a name="Install">Installation</a>
+* Clone from github
 ```
-As a customer
-So that I can check if I want to order something
-I would like to see a list of dishes with prices
-
-As a customer
-So that I can order the meal I want
-I would like to be able to select some number of several available dishes
-
-As a customer
-So that I can verify that my order is correct
-I would like to check that the total I have been given matches the sum of the various dishes in my order
-
-As a customer
-So that I am reassured that my order will be delivered on time
-I would like to receive a text such as "Thank you! Your order was placed and will be delivered before 18:52" after I have ordered
+$ git clone https://github.com/BenJohnCarson/takeaway-challenge
 ```
 
-Instructions
--------------
+* Switch to ruby 2.3.1
+```
+$ rvm use 2.3.1
+```
 
+* Install gems
+```
+$ gem install bundler
+$ bundle
+```
+
+## <a name="Usage">Usage</a>
 To create a menu, add dishes to the dishes.txt in the format: ```meal_name 995``` with price in pennies.
 
-To set-up confirmation texts, create a client_details.rb file in the lib folder and the following to it with your details:
+To set-up confirmation texts, create a client_details.rb file in the lib folder and add the following to it with your details:
 ```
 module ClientDetails
     def client_details
@@ -58,9 +62,25 @@ Order should be inputted as a string: "first choice quantity, second choice quan
 
 Once the order has been passed you will receive a text giving you an estimated delivery time.
 
-Edge Cases and further development
---------------------------------------
+## <a name="Stories">User Stories</a>
+```
+As a customer
+So that I can check if I want to order something
+I would like to see a list of dishes with prices
 
+As a customer
+So that I can order the meal I want
+I would like to be able to select some number of several available dishes
+
+As a customer
+So that I can verify that my order is correct
+I would like to check that the total I have been given matches the sum of the various dishes in my order
+
+As a customer
+So that I am reassured that my order will be delivered on time
+I would like to receive a text such as "Thank you! Your order was placed and will be delivered before 18:52" after I have ordered
+```
+## <a name="Extensions">Possible Extensions</a>
 Given more time, there'd be a couple more features I'd like to implement.
 
 * A way to pass in multiple orders, and then using a confirm_order method to pass it
